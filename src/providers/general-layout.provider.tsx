@@ -1,6 +1,6 @@
 "use client";
 
-import { FloatingNav } from "@/components";
+import { FloatingNav } from "@/components/ui";
 import { PropsWithChildren } from "react";
 import { NextUI } from "./next-ui.provider";
 

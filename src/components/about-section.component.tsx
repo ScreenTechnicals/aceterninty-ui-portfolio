@@ -1,8 +1,6 @@
 "use client";
-
 import { DirectionAwareHover } from "@/components/ui";
 import { Button, Card, CardBody } from "@nextui-org/react";
-
 import dynamic from "next/dynamic";
 
 const World = dynamic(() => import("@/components/ui").then((m) => m.World), {
@@ -431,7 +429,7 @@ export const AboutSection = () => {
                 Connect Now
               </Button>
               <div className="absolute w-full h-full top-10 left-40 scale-[1.15]">
-                <World data={sampleArcs} globeConfig={globeConfig} />
+                {/* <World data={sampleArcs} globeConfig={globeConfig} /> */}
               </div>
             </CardBody>
           </Card>
@@ -457,7 +455,7 @@ export const AboutSection = () => {
                 Connect Now
               </Button>
               <div className="absolute w-full h-full top-10 left-40 scale-[1.15]">
-                <World data={sampleArcs} globeConfig={globeConfig} />
+                {/* <World data={sampleArcs} globeConfig={globeConfig} /> */}
               </div>
             </CardBody>
           </Card>
