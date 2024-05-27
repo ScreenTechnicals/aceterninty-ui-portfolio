@@ -1,6 +1,13 @@
+"use client";
+
 import { DirectionAwareHover } from "@/components/ui";
-import { World } from "@/components/ui/globe.component";
 import { Button, Card, CardBody } from "@nextui-org/react";
+
+import dynamic from "next/dynamic";
+
+const World = dynamic(() => import("@/components/ui").then((m) => m.World), {
+  ssr: false,
+});
 
 const globeConfig = {
   pointSize: 4,
@@ -409,13 +416,12 @@ export const AboutSection = () => {
             }}
           >
             <CardBody>
-              <h2 className="text-2xl md:text-4xl font-bold pointer-events-none">
+              <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
                 I’m very flexible with time <br /> zone communications
               </h2>
               <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                maiores reiciendis tempore minima, placeat velit provident
-                excepturi dolorum praesentium, consequuntur numquam.
+                maiores reiciendis tempore minima.
               </p>
               <Button
                 radius="sm"
@@ -436,13 +442,12 @@ export const AboutSection = () => {
             }}
           >
             <CardBody>
-              <h2 className="text-2xl md:text-4xl font-bold pointer-events-none">
+              <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
                 I’m very flexible with time <br /> zone communications
               </h2>
               <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                maiores reiciendis tempore minima, placeat velit provident
-                excepturi dolorum praesentium, consequuntur numquam.
+                maiores reiciendis tempore minima.
               </p>
               <Button
                 radius="sm"

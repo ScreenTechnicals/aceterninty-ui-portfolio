@@ -1,4 +1,6 @@
-import { FloatingNav, Spotlight } from "@/components/ui";
+"use client";
+
+import { FloatingNav } from "@/components";
 import { PropsWithChildren } from "react";
 import { NextUI } from "./next-ui.provider";
 
@@ -6,8 +8,8 @@ type GeneralLayoutProps = PropsWithChildren<{}>;
 
 const navItems = [
   {
-    name: "Home",
     link: "/",
+    name: "Home",
     icon: "Home",
   },
   {
@@ -34,16 +36,8 @@ const navItems = [
 export const GeneralLayout = ({ children }: GeneralLayoutProps) => {
   return (
     <NextUI>
-      <div className="2xl:grid min-h-[100vh] 2xl:grid-rows-[auto_1fr] selection:bg-primary-500/30s relative">
+      <div className="relative overflow-x-hidden">
         <FloatingNav navItems={navItems} />
-        <Spotlight
-          className="-top-40 left-0 md:left-[30%] md:-top-0 lg:w-[70%] lg:h-[100%]"
-          fill="#D3D8DF"
-        />
-        <Spotlight
-          className="-top-40 left-0 md:left-[5%] md:-top-0 lg:w-[70%] lg:h-[100%]"
-          fill="#D3D8DF"
-        />
         {children}
       </div>
     </NextUI>

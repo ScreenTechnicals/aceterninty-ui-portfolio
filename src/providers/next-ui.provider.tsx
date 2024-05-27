@@ -9,5 +9,5 @@ type NextUIProps = PropsWithChildren<{}>;
 export const NextUI = ({ children }: NextUIProps) => {
   const router = useRouter();
 
-  return <NextUIProvider>{children}</NextUIProvider>;
+  return <NextUIProvider navigate={router.push}>{children}</NextUIProvider>;
 };
