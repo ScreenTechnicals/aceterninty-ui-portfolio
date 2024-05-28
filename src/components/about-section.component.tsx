@@ -430,7 +430,7 @@ export const AboutSection = () => {
         <div className="w-full flex flex-col gap-5">
           <Card className="h-[40psvh] md:h-[30svh] backdrop-blur-sm">
             <CardBody>
-              <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
+              <h2 className="text-2xl md:text-3xl font-bold relative z-10">
                 I’m very flexible with time <br /> zone communications
               </h2>
               <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs">
