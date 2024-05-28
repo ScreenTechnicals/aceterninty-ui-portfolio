@@ -428,7 +428,7 @@ export const AboutSection = () => {
           </h2>
         </DirectionAwareHover>
         <div className="w-full flex flex-col gap-5">
-          <Card className="h-[30svh] backdrop-blur-sm">
+          <Card className="h-[40psvh] md:h-[30svh] backdrop-blur-sm">
             <CardBody>
               <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
                 I’m very flexible with time <br /> zone communications
@@ -458,12 +458,12 @@ export const AboutSection = () => {
                   My tech stack
                 </h2>
               </div>
-              <div className="absolute flex -left-[30%] md:left-[20%] flex-col gap-3 -top-3">
+              <div className="absolute left-0 md:left-[20%] flex-col gap-3 -top-3">
                 {myTechstacks.slice(0, 2).map((tech, index) => (
                   <TechstackCard key={index} value={tech} />
                 ))}
               </div>
-              <div className="absolute left-[15%] md:left-[47%]  flex flex-col gap-3 -top-4">
+              <div className="absolute left-[15%] md:left-[47%] hidden md:flex flex-col gap-3 -top-4">
                 {myTechstacks.slice(3, 6).map((tech, index) => (
                   <TechstackCard key={index} value={tech} />
                 ))}
