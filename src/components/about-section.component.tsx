@@ -1,14 +1,7 @@
 "use client";
-import { DirectionAwareHover } from "@/components/ui";
-import { Button, Card, CardBody } from "@nextui-org/react";
-import dynamic from "next/dynamic";
-
-const World = dynamic(
-  () => import("@/components/ui/globe.component").then((m) => m.World),
-  {
-    ssr: false,
-  }
-);
+import { DirectionAwareHover, World } from "@/components/ui";
+import { Button, CardBody } from "@nextui-org/react";
+import { Card } from "./card.component";
 
 const globeConfig = {
   pointSize: 4,
@@ -396,26 +389,46 @@ const sampleArcs = [
   },
 ];
 
+const myTechstacks = [
+  "Next UI",
+  "Firebase",
+  "Python",
+  "Next Js",
+  "Tailwind CSS",
+  "Framer Motion",
+  "Typescript",
+  "Mongo DB",
+  "GraphQL",
+  "Solidity",
+];
+
+type TechstackCardProps = {
+  value: string;
+};
+
+const TechstackCard = ({ value }: TechstackCardProps) => {
+  return (
+    <div className="flex place-content-center place-items-center text-base font-bold !text-[#C1C2D3] bg-[#10132E] py-4 w-[150px] rounded-lg">
+      {value}
+    </div>
+  );
+};
+
 export const AboutSection = () => {
   return (
     <div className="md:px-20 p-5 bg-[url(/images/bg1.png)] bg-cover bg-no-repeat bg-bottom">
-      <div className="flex md:flex-row flex-col items-start gap-10 w-full">
+      <div className="grid md:grid-cols-2 gap-5 w-full">
         <DirectionAwareHover
           imageUrl={"/images/img2.png"}
-          className="!w-full !min-h-[45svh]  md:!min-h-[68svh] rounded-xl border border-[#6971A2]/20"
+          className="!w-full !h-[45svh]  md:!h-[63svh] rounded-xl border border-[#6971A2]/20"
         >
           <h2 className="text-2xl md:text-4xl font-bold">
             I prioritize client <br /> collaboration, fostering <br /> open
             communication
           </h2>
         </DirectionAwareHover>
-        <div className="w-full flex flex-col gap-10">
-          <Card
-            classNames={{
-              base: "bg-transparent border border-[#6971A2]/20 backdrop-blur-sm w-full min-h-[30svh] p-0",
-              body: "overflow-hidden text-white p-7 relative w-full",
-            }}
-          >
+        <div className="w-full flex flex-col gap-5">
+          <Card className="h-[30svh] backdrop-blur-sm">
             <CardBody>
               <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
                 I’m very flexible with time <br /> zone communications
@@ -426,7 +439,6 @@ export const AboutSection = () => {
               </p>
               <Button
                 radius="sm"
-                size="lg"
                 className="border-[#6971A2]/20 border bg-gradient-to-tr from-[#161A31] to-[#06091F] text-white max-w-fit z-[10] relative"
               >
                 Connect Now
@@ -436,29 +448,30 @@ export const AboutSection = () => {
               </div>
             </CardBody>
           </Card>
-          <Card
-            classNames={{
-              base: "bg-transparent border border-[#6971A2]/20 backdrop-blur-sm w-full min-h-[30svh] p-0",
-              body: "overflow-hidden text-white p-7 relative w-full",
-            }}
-          >
-            <CardBody>
-              <h2 className="text-2xl md:text-3xl font-bold pointer-events-none">
-                I’m very flexible with time <br /> zone communications
-              </h2>
-              <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                maiores reiciendis tempore minima.
-              </p>
-              <Button
-                radius="sm"
-                size="lg"
-                className="border-[#6971A2]/20 border bg-gradient-to-tr from-[#161A31] to-[#06091F] text-white max-w-fit z-[10] relative"
-              >
-                Connect Now
-              </Button>
-              <div className="absolute w-full h-full top-10 left-40 scale-[1.15]">
-                <World data={sampleArcs} globeConfig={globeConfig} />
+          <Card className="h-[30svh] bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
+            <CardBody className="flex flex-row gap-5 items-end">
+              <div className="w-full relative z-10">
+                <p className="text-[#C1C2D3] text-sm md:text-lg">
+                  I constantly try to improve
+                </p>
+                <h2 className="font-bold text-4xl md:text-5xl text-nowrap">
+                  My tech stack
+                </h2>
+              </div>
+              <div className="absolute flex -left-[30%] md:left-[20%] flex-col gap-3 -top-3">
+                {myTechstacks.slice(0, 2).map((tech, index) => (
+                  <TechstackCard key={index} value={tech} />
+                ))}
+              </div>
+              <div className="absolute left-[15%] md:left-[47%]  flex flex-col gap-3 -top-4">
+                {myTechstacks.slice(3, 6).map((tech, index) => (
+                  <TechstackCard key={index} value={tech} />
+                ))}
+              </div>
+              <div className="absolute right-3 flex flex-col gap-3 md:-top-4 top-0">
+                {myTechstacks.slice(6, 10).map((tech, index) => (
+                  <TechstackCard key={index} value={tech} />
+                ))}
               </div>
             </CardBody>
           </Card>

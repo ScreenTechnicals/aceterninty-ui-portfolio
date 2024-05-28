@@ -6,8 +6,8 @@ export const HeroSection = () => {
   return (
     <div className="md:pt-0 pt-44 px-5 md:min-h-svh w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden bg-[url(/images/bg1.png)] bg-cover bg-no-repeat bg-bottom">
       <div className="absolute top-0 left-0 w-full h-[40rem]">
-        <Spotlight className="!left-[10%]" fill="#D3D8DF" />
-        <Spotlight className="md:!left-[40%]" fill="#FFFFFF" />
+        <Spotlight className="!left-[10%]" fill="#CBACF9" />
+        <Spotlight className="md:!left-[40%]" fill="#CBACF9CC" />
       </div>
       <div className="flex flex-col text-center justify-center items-center gap-3 md:gap-5 mx-auto">
         <p className="tracking-widest uppercase text-xs md:text-base">
