@@ -458,7 +458,7 @@ export const AboutSection = () => {
                   My tech stack
                 </h2>
               </div>
-              <div className="absolute left-0 md:left-[20%] flex-col gap-3 -top-3">
+              <div className="absolute left-0 md:left-[20%] flex flex-col gap-3 -top-3">
                 {myTechstacks.slice(0, 2).map((tech, index) => (
                   <TechstackCard key={index} value={tech} />
                 ))}
