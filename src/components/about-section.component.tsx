@@ -420,9 +420,10 @@ export const AboutSection = () => {
       <div className="grid md:grid-cols-2 gap-5 w-full">
         <DirectionAwareHover
           imageUrl={"/images/img2.png"}
-          className="!w-full !h-[45svh]  md:!h-[63svh] rounded-xl border border-[#6971A2]/20"
+          className="!w-full !h-[45svh] md:!h-[63svh] rounded-xl border border-[#6971A2]/20"
+          childrenClassName="md:bottom-10 md:left-10 bottom-5 left-5"
         >
-          <h2 className="text-2xl md:text-4xl font-bold">
+          <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-bold">
             I prioritize client <br /> collaboration, fostering <br /> open
             communication
           </h2>
@@ -430,16 +431,16 @@ export const AboutSection = () => {
         <div className="w-full flex flex-col gap-5">
           <Card className="h-[40psvh] md:h-[30svh] backdrop-blur-sm">
             <CardBody>
-              <h2 className="text-2xl md:text-3xl font-bold relative z-10">
+              <h2 className="text-2xl 2xl:text-4xl md:text-3xl font-bold relative z-10">
                 I’m very flexible with time <br /> zone communications
               </h2>
-              <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs">
+              <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs 2xl:text-xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
                 maiores reiciendis tempore minima.
               </p>
               <Button
                 radius="sm"
-                className="border-[#6971A2]/20 border bg-gradient-to-tr from-[#161A31] to-[#06091F] text-white max-w-fit z-[10] relative"
+                className="border-[#6971A2]/20 border bg-gradient-to-tr from-[#161A31] to-[#06091F] text-white max-w-fit z-[10] relative 2xl:scale-[1.1]"
               >
                 Connect Now
               </Button>
@@ -450,28 +451,31 @@ export const AboutSection = () => {
           </Card>
           <Card className="h-[30svh] bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
             <CardBody className="flex flex-row gap-5 items-end">
-              <div className="w-full relative z-10">
-                <p className="text-[#C1C2D3] text-sm md:text-lg">
+              <div className="absolute left-0 bottom-0 z-20 w-full h-full bg-gradient-to-t from-[#04071D] via-[#0C0E23]/70 to-[#0C0E23]/0" />
+              <div className="w-fit relative z-20">
+                <p className="text-[#C1C2D3] text-sm md:text-lg 2xl:text-xl">
                   I constantly try to improve
                 </p>
-                <h2 className="font-bold text-4xl md:text-5xl text-nowrap">
+                <h2 className="font-bold text-4xl md:text-5xl 2xl:text-7xl text-nowrap">
                   My tech stack
                 </h2>
               </div>
-              <div className="absolute left-0 md:left-[20%] flex flex-col gap-3 -top-3">
-                {myTechstacks.slice(0, 2).map((tech, index) => (
-                  <TechstackCard key={index} value={tech} />
-                ))}
-              </div>
-              <div className="absolute left-[15%] md:left-[47%] hidden md:flex flex-col gap-3 -top-4">
-                {myTechstacks.slice(3, 6).map((tech, index) => (
-                  <TechstackCard key={index} value={tech} />
-                ))}
-              </div>
-              <div className="absolute right-3 flex flex-col gap-3 md:-top-4 top-0">
-                {myTechstacks.slice(6, 10).map((tech, index) => (
-                  <TechstackCard key={index} value={tech} />
-                ))}
+              <div className="absolute right-5 flex gap-3 -top-3">
+                <div className="flex gap-3 flex-col">
+                  {myTechstacks.slice(0, 2).map((tech, index) => (
+                    <TechstackCard key={index} value={tech} />
+                  ))}
+                </div>
+                <div className="flex gap-3 flex-col">
+                  {myTechstacks.slice(3, 6).map((tech, index) => (
+                    <TechstackCard key={index} value={tech} />
+                  ))}
+                </div>
+                <div className="flex gap-3 flex-col">
+                  {myTechstacks.slice(6, 10).map((tech, index) => (
+                    <TechstackCard key={index} value={tech} />
+                  ))}
+                </div>
               </div>
             </CardBody>
           </Card>
