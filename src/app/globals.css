@@ -6,6 +6,9 @@ body {
   background: #000319 !important;
   color: white;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 @layer utilities {
   .text-balance {

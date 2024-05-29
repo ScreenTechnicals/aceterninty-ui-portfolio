@@ -411,7 +411,7 @@ type TechstackCardProps = {
 
 const TechstackCard = ({ value }: TechstackCardProps) => {
   return (
-    <div className="flex place-content-center place-items-center text-base font-bold !text-[#C1C2D3] bg-[#10132E] py-4 w-[150px] rounded-lg">
+    <div className="flex place-content-center place-items-center text-base font-medium !text-[#C1C2D3] bg-[#10132E] py-4 w-[150px] rounded-lg">
       {value}
     </div>
   );
@@ -426,7 +426,7 @@ export const AboutSection = () => {
           className="!w-full !h-[45svh] md:!h-[62svh] rounded-xl border border-[#6971A2]/20"
           childrenClassName="md:bottom-10 md:left-10 bottom-5 left-5"
         >
-          <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-bold">
+          <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-medium">
             I prioritize client <br /> collaboration, fostering <br /> open
             communication
           </h2>
@@ -434,7 +434,7 @@ export const AboutSection = () => {
         <div className="w-full flex flex-col gap-5">
           <Card className="h-[40svh] md:h-[30svh] backdrop-blur-sm">
             <CardBody>
-              <h2 className="text-2xl 2xl:text-4xl md:text-3xl font-bold relative z-10">
+              <h2 className="text-2xl 2xl:text-4xl md:text-3xl font-medium relative z-10">
                 I’m very flexible with time <br /> zone communications
               </h2>
               <p className="relative z-10 pointer-events-none mt-3 mb-5 font-light tracking-wider md:text-base text-xs 2xl:text-xl">
@@ -459,7 +459,7 @@ export const AboutSection = () => {
                 <p className="text-[#C1C2D3] text-sm md:text-lg 2xl:text-xl">
                   I constantly try to improve
                 </p>
-                <h2 className="font-bold text-4xl md:text-5xl 2xl:text-7xl text-nowrap">
+                <h2 className="font-medium text-4xl md:text-5xl 2xl:text-7xl text-nowrap">
                   My tech stack
                 </h2>
               </div>
@@ -488,7 +488,7 @@ export const AboutSection = () => {
         <div className="md:w-[50%] flex flex-col gap-5">
           <Card className="h-[25svh]">
             <CardBody>
-              <h2 className="text-2xl 2xl:text-4xl font-bold relative z-10 mb-5">
+              <h2 className="text-2xl 2xl:text-4xl font-medium relative z-10 mb-5">
                 Tech enthusiast with a <br /> passion for development.
               </h2>
               <div className="w-full flex justify-end">
@@ -504,7 +504,7 @@ export const AboutSection = () => {
           </Card>
           <Card className="h-[25svh]">
             <CardBody className="relative flex place-items-center place-content-center text-center">
-              <h2 className="text-2xl 2xl:text-4xl font-bold relative z-10 mb-5">
+              <h2 className="text-2xl 2xl:text-4xl font-medium relative z-10 mb-5">
                 Do you want to start a <br /> project together?
               </h2>
               <Button
@@ -535,7 +535,7 @@ export const AboutSection = () => {
                 <p className="tracking-wider text-xs md:text-xl font-light">
                   The Inside Scoop
                 </p>
-                <h2 className="text-xl 2xl:text-5xl md:text-4xl font-bold relative z-10 mb-5">
+                <h2 className="text-xl 2xl:text-5xl md:text-4xl font-medium relative z-10 mb-5">
                   Currently building a JS Animation library
                 </h2>
               </div>

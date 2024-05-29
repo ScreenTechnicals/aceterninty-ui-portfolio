@@ -9,4 +9,5 @@ export const World = dynamic(
 
 export * from "./direction-aware-hover.component";
 export * from "./floating-navbar.component";
+export * from "./pin-container.component";
 export * from "./spotlight.component";
