@@ -1,6 +1,9 @@
 "use client";
 import { DirectionAwareHover, World } from "@/components/ui";
+import { copyToClipboard } from "@/helpers";
 import { Button, CardBody } from "@nextui-org/react";
+import Image from "next/image";
+import { FaCopy } from "react-icons/fa";
 import { Card } from "./card.component";
 
 const globeConfig = {
@@ -417,10 +420,10 @@ const TechstackCard = ({ value }: TechstackCardProps) => {
 export const AboutSection = () => {
   return (
     <div className="md:px-20 p-5 bg-[url(/images/bg1.png)] bg-cover bg-no-repeat bg-bottom">
-      <div className="grid md:grid-cols-2 gap-5 w-full">
+      <div className="grid md:grid-cols-2 gap-5 w-full mb-5">
         <DirectionAwareHover
           imageUrl={"/images/img2.png"}
-          className="!w-full !h-[45svh] md:!h-[63svh] rounded-xl border border-[#6971A2]/20"
+          className="!w-full !h-[45svh] md:!h-[62svh] rounded-xl border border-[#6971A2]/20"
           childrenClassName="md:bottom-10 md:left-10 bottom-5 left-5"
         >
           <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-bold">
@@ -429,7 +432,7 @@ export const AboutSection = () => {
           </h2>
         </DirectionAwareHover>
         <div className="w-full flex flex-col gap-5">
-          <Card className="h-[40psvh] md:h-[30svh] backdrop-blur-sm">
+          <Card className="h-[40svh] md:h-[30svh] backdrop-blur-sm">
             <CardBody>
               <h2 className="text-2xl 2xl:text-4xl md:text-3xl font-bold relative z-10">
                 I’m very flexible with time <br /> zone communications
@@ -481,7 +484,68 @@ export const AboutSection = () => {
           </Card>
         </div>
       </div>
-      <div></div>
+      <div className="flex gap-5 w-full flex-col md:flex-row">
+        <div className="md:w-[50%] flex flex-col gap-5">
+          <Card className="h-[25svh]">
+            <CardBody>
+              <h2 className="text-2xl 2xl:text-4xl font-bold relative z-10 mb-5">
+                Tech enthusiast with a <br /> passion for development.
+              </h2>
+              <div className="w-full flex justify-end">
+                <Image
+                  src={"/images/img3.png"}
+                  alt=""
+                  width={300}
+                  height={300}
+                  className="w-[300px] h-[200px] 2xl:w-[400px] 2xl:h-[300px]"
+                />
+              </div>
+            </CardBody>
+          </Card>
+          <Card className="h-[25svh]">
+            <CardBody className="relative flex place-items-center place-content-center text-center">
+              <h2 className="text-2xl 2xl:text-4xl font-bold relative z-10 mb-5">
+                Do you want to start a <br /> project together?
+              </h2>
+              <Button
+                onPress={() => {
+                  copyToClipboard("screentechnicals@gmail.com");
+                }}
+                radius="sm"
+                variant="flat"
+                startContent={<FaCopy />}
+                className="relative z-10 bg-white/80 opacity-85"
+              >
+                Copy my email address
+              </Button>
+              <Image
+                src={"/images/radial-gradient.svg"}
+                alt=""
+                width={500}
+                height={500}
+                className="absolute -left-32 -top-28 scale-[2]"
+              />
+            </CardBody>
+          </Card>
+        </div>
+        <div className="w-full">
+          <Card className="h-[20svh] md:h-[52svh]">
+            <CardBody className="flex flex-row items-center p-0">
+              <div className="pl-5">
+                <p className="tracking-wider text-xs md:text-xl font-light">
+                  The Inside Scoop
+                </p>
+                <h2 className="text-xl 2xl:text-5xl md:text-4xl font-bold relative z-10 mb-5">
+                  Currently building a JS Animation library
+                </h2>
+              </div>
+              <div className="w-full h-full flex justify-end relative">
+                <Image src={"/images/img1.png"} alt="" fill />
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 import { FloatingNav } from "@/components/ui";
 import { PropsWithChildren } from "react";
+import { Toaster } from "react-hot-toast";
 import { NextUI } from "./next-ui.provider";
 
 type GeneralLayoutProps = PropsWithChildren<{}>;
@@ -37,6 +38,7 @@ export const GeneralLayout = ({ children }: GeneralLayoutProps) => {
   return (
     <NextUI>
       <div className="relative overflow-x-hidden">
+        <Toaster />
         <FloatingNav navItems={navItems} />
         {children}
       </div>
